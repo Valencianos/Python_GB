@@ -12,12 +12,9 @@ def fractions_separator(num: str) -> list:
     return num.split('/')
 
 
-print(fractions_separator(str1))
-
-
 def fraction_methods(par1: str, par2: str) -> str:
     par1_numerator, par1_denominator = int(fractions_separator(par1)[0]), int(fractions_separator(par1)[1])
-    par2_numerator, par2_denominator = int(par2[0]), int(par2[1])
+    par2_numerator, par2_denominator = int(fractions_separator(par2)[0]), int(fractions_separator(par2)[1])
     temp = lcm(par1_denominator, par2_denominator)
     res_numerator = temp // par1_denominator * par1_numerator + temp // par2_denominator * par2_numerator
     res_sum = str(res_numerator) + '/' + str(temp)
